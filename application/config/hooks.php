@@ -14,7 +14,9 @@ use \LeanCloud\Storage\CookieStorage;
 
 // /1.1/functions/sayHello
 Cloud::define("pay", function($params, $user) {
-	// var_dump($user);
+	var_dump($user);
+	var_dump($params);
+	exit;
 	$openid = $user->get('authData')["lc_weapp"]["openid"];
 	// 		初始化值对象
 	$input = new WxPayUnifiedOrder();
@@ -24,7 +26,7 @@ Cloud::define("pay", function($params, $user) {
 	$input->SetOut_trade_no($params['tradeNo']);
 	// 		费用应该是由小程序端传给服务端的，在用户下单时告知服务端应付金额，demo中取值是1，即1分钱
 	$input->SetTotal_fee($params['totalFee']);
-	$input->SetNotify_url("https://laeser.leanapp.cn/WXPay/notify");
+	$input->SetNotify_url("https://fancyandcat.leanapp.cn/WXPay/notify");
 	$input->SetTrade_type("JSAPI");
 	// 		由小程序端传给服务端
 	$input->SetOpenid($openid);
@@ -32,7 +34,7 @@ Cloud::define("pay", function($params, $user) {
 	$order = WxPayApi::unifiedOrder($input);
 	// 		json化返回给小程序端
 	header("Content-Type: application/json");
-	// var_dump($order);
+	var_dump($order);
 	return getJsApiParameters($order);
 	// return "hello {$params['name']}";
 });
