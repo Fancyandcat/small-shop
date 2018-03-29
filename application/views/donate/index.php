@@ -33,7 +33,6 @@
 					<tbody>
 						<?php foreach($result as $item):?>
 							<tr>
-								<td><img width="60" height="60" src="<?=$item->get('user')->get('avatarUrl');?>" /></td>
 								<td><?=$item->get('user')->get('nickName');?></td>
 								<td><?=$item->get('amount')?></td>
 								<td><?=$item->get('updatedAt')->format('Y-m-d');?></td>
