@@ -3,6 +3,7 @@
 .avoscloud/
 .leancloud/
 vendor/
+Codeigniter/
 public/bower_components/AdminLTE/documentation/
 public/bower_components/AdminLTE/bootstrap/
 public/bower_components/AdminLTE/dist/img/

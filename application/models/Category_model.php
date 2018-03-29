@@ -9,6 +9,7 @@ class Category_model extends CI_Model {
 		$query = new Query("Category");
 		$query->equalTo('parent', null);
 		$categoris = $query->find();
+		var_dump($categoris);
 		// 2. sub
 		foreach ($categoris as $category) {
 			$query->equalTo('parent', $category);
@@ -16,7 +17,7 @@ class Category_model extends CI_Model {
 			// 不必使用转数组再动态添加成员属性，$category = $category->toJSON();object同样可以实现操作
 			$category->children = $children;
 			$result[] = $category;
-
+			var_dump($category);
 		}
 		return $result;
 	}
