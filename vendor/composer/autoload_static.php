@@ -6,7 +6,15 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitba7f4e2fb7278b6932276c5c165b28db
 {
+    public static $files = array (
+        '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'Q' => 
+        array (
+            'Qiniu\\' => 6,
+        ),
         'L' => 
         array (
             'LeanCloud\\' => 10,
@@ -14,6 +22,10 @@ class ComposerStaticInitba7f4e2fb7278b6932276c5c165b28db
     );
 
     public static $prefixDirsPsr4 = array (
+        'Qiniu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu',
+        ),
         'LeanCloud\\' => 
         array (
             0 => __DIR__ . '/..' . '/leancloud/leancloud-sdk/src/LeanCloud',
