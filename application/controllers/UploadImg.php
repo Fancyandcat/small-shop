@@ -1,5 +1,5 @@
 <?php
-require_once("vendor/qiniu/php-sdk/autoload.php");
+require "vendor/qiniu/php-sdk/autoload.php";
 
 use Qiniu\Auth;
 
